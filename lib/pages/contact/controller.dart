@@ -16,6 +16,7 @@ class ContactController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    loadAllData();
   }
 
   loadAllData() async {
