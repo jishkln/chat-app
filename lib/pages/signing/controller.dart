@@ -58,6 +58,7 @@ class SigningController extends GetxController {
           if (userbase.docs.isEmpty) {
             final data = UserData(
               id: id,
+              photoUrl: photoUrl,
               name: displayName,
               email: email,
               location: "",
