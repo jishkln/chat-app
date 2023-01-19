@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:chat_application/common/entities/user.dart';
 import 'package:chat_application/common/services/storeservice.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class UserStore extends GetxController {
   static UserStore get to => Get.find();

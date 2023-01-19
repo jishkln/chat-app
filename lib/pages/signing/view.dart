@@ -1,5 +1,3 @@
-import 'package:chat_application/pages/welcome/controller.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,7 +14,7 @@ class SigningPage extends GetView<SigningController> {
       body: SafeArea(
         child: Center(
           child: Column(
-            children: [_buildLogo(), Spacer(), _buildLogin()],
+            children: [_buildLogo(), const Spacer(), _buildLogin()],
           ),
         ),
       ),

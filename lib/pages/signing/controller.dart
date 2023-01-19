@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:chat_application/common/entities/user.dart';
 import 'package:chat_application/common/routes/names.dart';
-import 'package:chat_application/common/services/storeservice.dart';
 import 'package:chat_application/common/store/userstorage.dart';
 import 'package:chat_application/common/widgets/toast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -75,7 +74,7 @@ class SigningController extends GetxController {
                 .add(data);
           }
           toastInfo(msg: "Login sucess");
-          Get.offAll(AppRoutes.Application);
+          Get.offAllNamed(AppRoutes.Application);
         }
       }
     } catch (e) {

@@ -1,8 +1,10 @@
+import 'package:chat_application/pages/app/index.dart';
 import 'package:chat_application/pages/signing/index.dart';
 
 import 'package:chat_application/pages/welcome/index.dart';
 import 'package:get/get.dart';
 
+import '../middleware/router_welcom.dart';
 import 'names.dart';
 
 class AppPages {
@@ -12,14 +14,22 @@ class AppPages {
   static List<String> history = [];
   static final List<GetPage> routes = [
     GetPage(
-      name: AppRoutes.INITIAL, page: () => WelcomePage(),
+      name: AppRoutes.INITIAL,
+      page: () => const WelcomePage(),
       binding: WelcomeBinding(),
-      // middlewares:[ RouteWelcomeMiddleware(priority:1),],
+      middlewares: [
+        RouteWelcomeMiddleware(priority: 1),
+      ],
     ),
     GetPage(
       name: AppRoutes.SIGN_IN,
       page: () => const SigningPage(),
       binding: SigninBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.Application,
+      page: () => const ApplicationPage(),
+      binding: ApplicationBinding(),
     ),
   ];
 }
