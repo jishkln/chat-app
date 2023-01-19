@@ -17,6 +17,8 @@ class ChatController extends GetxController {
   final user_id = UserStore.to.token;
   final db = FirebaseFirestore.instance;
 
+  var listener;
+
   @override
   onInit() {
     super.onInit();
@@ -54,5 +56,43 @@ class ChatController extends GetxController {
       "last_msg": sendContent,
       "last_time": Timestamp.now(),
     });
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    var message = db
+        .collection("message")
+        .doc(doc_id)
+        .collection("msglist")
+        .withConverter(
+            fromFirestore: Msgcontent.fromFirestore,
+            toFirestore: (Msgcontent msgcontent, options) =>
+                msgcontent.toFirestire())
+        .orderBy("addtime", descending: true);
+    state.msgcontentlist.clear();
+    listener = message.snapshots().listen((event) {
+      for (var change in event.docChanges) {
+        switch (change.type) {
+          case DocumentChangeType.added:
+            if (change.doc.data() != null) {
+              state.msgcontentlist.insert(0, change.doc.data()!);
+            }
+            break;
+          case DocumentChangeType.modified:
+            break;
+          case DocumentChangeType.removed:
+            break;
+        }
+      }
+    }, onError: (error) => print("listen failed : $error"));
+  }
+
+  @override
+  void dispose() {
+    msgScrolling.dispose();
+    listener.cancel();
+
+    super.dispose();
   }
 }

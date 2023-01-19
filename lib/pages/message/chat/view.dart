@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:chat_application/pages/message/chat/widgets/chatlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,7 @@ class ChatPage extends GetView<ChatController> {
         constraints: const BoxConstraints.expand(),
         child: Stack(
           children: [
+            ChatList(),
             Positioned(
               left: 10.w,
               bottom: 0.h,
