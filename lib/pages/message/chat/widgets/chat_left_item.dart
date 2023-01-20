@@ -3,10 +3,10 @@ import 'package:chat_application/common/entities/msgcontent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget chatRightItem(Msgcontent item) {
+Widget chatLeftItem(Msgcontent item) {
   return Container(
     padding: EdgeInsets.only(top: 10.w, left: 15.w, right: 15.w, bottom: 10.w),
-    child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+    child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
       ConstrainedBox(
         constraints: BoxConstraints(
           maxHeight: 40.w,
