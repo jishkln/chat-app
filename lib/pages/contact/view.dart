@@ -20,9 +20,9 @@ class ContactPage extends GetView<ContactController> {
   }
 
   AppBar _buildAppBar() => AppBar(
-          title: Text(
+      centerTitle: true,
+      title: Text(
         "Contact",
-        style: TextStyle(
-            color: Colors.green, fontSize: 18.sp, fontWeight: FontWeight.w600),
+        style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
       ));
 }

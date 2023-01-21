@@ -50,7 +50,7 @@ class ContactController extends GetxController {
           from_name: userData.displayName,
           to_name: to_userdata.name,
           from_avatar: userData.photoUrl,
-          to_avarar: to_userdata.photoUrl,
+          to_avatar: to_userdata.photoUrl,
           last_msg: "",
           last_time: Timestamp.now(),
           msg_num: 0);

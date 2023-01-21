@@ -1,4 +1,5 @@
 import 'package:chat_application/pages/contact/index.dart';
+import 'package:chat_application/pages/message/view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,12 +25,10 @@ class ApplicationPage extends GetView<ApplicationController> {
       controller: controller.pageController,
       onPageChanged: controller.handlePageChange,
       children: [
+        const MessagePage(),
+        const ContactPage(),
         Container(
-          child: Text("Chat"),
-        ),
-        ContactPage(),
-        Container(
-          child: Text("Profile"),
+          child: const Text("Profile"),
         )
       ],
     );
