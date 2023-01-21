@@ -53,7 +53,9 @@ class ChatPage extends GetView<ChatController> {
                         size: 35.w,
                         color: Colors.blue,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        _showPicker(context);
+                      },
                     ),
                   ),
                   Container(
@@ -72,6 +74,30 @@ class ChatPage extends GetView<ChatController> {
           ],
         ),
       )),
+    );
+  }
+
+  void _showPicker(context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SafeArea(
+            child: Wrap(children: [
+          ListTile(
+            leading: Icon(Icons.photo_library),
+            title: Text("Gallery"),
+            onTap: () {
+              controller.imgFromGallery();
+              Get.back();
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.photo_camera),
+            title: Text("Camera"),
+            onTap: () {},
+          )
+        ]));
+      },
     );
   }
 

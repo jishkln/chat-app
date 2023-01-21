@@ -18,6 +18,7 @@ Widget chatLeftItem(Msgcontent item) {
               top: 10.w,
               left: 15.w,
               right: 15.w,
+              bottom: 10.w,
             ),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
@@ -31,7 +32,7 @@ Widget chatLeftItem(Msgcontent item) {
               ),
               borderRadius: BorderRadius.all(
                 Radius.circular(
-                  20.w,
+                  10.w,
                 ),
               ),
             ),
@@ -39,7 +40,6 @@ Widget chatLeftItem(Msgcontent item) {
                 ? Text("${item.content}")
                 : ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxHeight: 40.w,
                       maxWidth: 90.w,
                     ),
                     child: GestureDetector(
