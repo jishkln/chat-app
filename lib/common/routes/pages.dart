@@ -6,6 +6,7 @@ import 'package:chat_application/pages/signing/index.dart';
 import 'package:chat_application/pages/welcome/index.dart';
 import 'package:get/get.dart';
 
+import '../../pages/message/photoview/index.dart';
 import '../middleware/router_welcom.dart';
 import 'names.dart';
 
@@ -42,6 +43,11 @@ class AppPages {
       name: AppRoutes.Chat,
       page: () => const ChatPage(),
       binding: ChatBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.Photoimgview,
+      page: () => const PhotoImageView(),
+      binding: PhotoImageViewBinding(),
     ),
   ];
 }
