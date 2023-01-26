@@ -1,5 +1,6 @@
 import 'package:chat_application/pages/contact/index.dart';
 import 'package:chat_application/pages/message/view.dart';
+import 'package:chat_application/pages/profile/view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,12 +25,10 @@ class ApplicationPage extends GetView<ApplicationController> {
       physics: const NeverScrollableScrollPhysics(),
       controller: controller.pageController,
       onPageChanged: controller.handlePageChange,
-      children: [
-        const MessagePage(),
-        const ContactPage(),
-        Container(
-          child: const Text("Profile"),
-        )
+      children: const [
+        MessagePage(),
+        ContactPage(),
+        ProfileView(),
       ],
     );
   }
